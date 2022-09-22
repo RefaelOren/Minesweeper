@@ -12,9 +12,52 @@
             <h1>Minesweeper</h1>
         </header>
         <div class="game-center">
-            <div class="timer">
-                <h3>Time <br /><span>0</span></h3>
+            <div class="lives">❤️</div>
+            <div class="hints" onclick="onClickedHint(this)">💡💡💡</div>
+            <div class="safe-click">Safe Click</div>
+            <div class="undo">Undo</div>
+            <div class="mega-hint">Mega Hint</div>
+            <div class="mega-hint">Mega Hint</div>
+            <div class="terminator">
+                <div>Mine Terminator!</div>
+                <img src="./images/terminator.jpg" alt="" />
             </div>
+            <div class="panel">
+                <div class="timer">
+                    <h3>Time <br /><span>0</span></h3>
+                </div>
+                <div class="levels">
+                    <button
+                        onclick="onChooseLevel(this)"
+                        class="level-btn easy"
+                        data-id="0"
+                    >
+                        Easy
+                    </button>
+                    <button
+                        onclick="onChooseLevel(this)"
+                        class="level-btn medium"
+                        data-id="1"
+                    >
+                        Medium
+                    </button>
+                    <button
+                        onclick="onChooseLevel(this)"
+                        class="level-btn hard checked"
+                        data-id="2"
+                    >
+                        Hard
+                    </button>
+                </div>
+
+                <div class="count">
+                    <h3>Count <br /><span>0</span></h3>
+                </div>
+            </div>
+            <div class="player-btn">
+                <button onclick="onRestartGame(this)">😐</button>
+            </div>
+
             <div class="board-container">
                 <table></table>
             </div>
