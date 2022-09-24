@@ -11,19 +11,47 @@ body {
 }
 
 header {
-    height: 20vh;
-    padding: 3rem;
+    margin: 0 auto;
+    height: 10vh;
+    padding: 2rem;
     background: lightblue;
-    font-size: 2rem;
+    font-size: 1rem;
+    border-bottom: 0.5rem solid rgb(142, 208, 230);
 }
 
-.panel {
-    transform: translateY(-6rem);
-    width: 100%;
-
+.game-center {
+    position: relative;
+    width: 100vw;
+    height: 89vh;
+    background: lemonchiffon;
+    margin: 0 auto;
+    padding-top: 6rem;
+}
+.top-panel {
+    position: absolute;
+    top: 0;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    height: 7%;
+    width: 100%;
+}
+
+.timer {
+    font-size: 1.5rem;
+    background: rgb(137, 245, 69);
+    height: 100%;
+    border-radius: 20%;
+    border: 2px solid black;
+}
+
+.count {
+    font-size: 1.5rem;
+    background: rgb(137, 245, 69);
+    height: 100%;
+    border-radius: 20%;
+    border: 2px solid black;
 }
 
 .levels {
@@ -32,173 +60,43 @@ header {
 }
 
 .level-btn {
-    font-size: 1.5rem;
-    font-weight: 900;
-    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 20%;
     background-color: rgb(239, 147, 212);
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .level-btn:hover {
-    /* background-color: rgb(242, 181, 115); */
-    transform: scale(1.2);
+    transform: scaleX(1.5);
 }
 
 .checked {
-    background-color: rgb(131, 75, 222);
-    color: black;
-}
-
-.game-center {
-    position: relative;
-
-    width: 80vw;
-    height: 80vh;
-    background: rgb(198, 232, 189);
-    margin: 0 auto;
-    padding-top: 6rem;
-}
-
-.lives {
-    position: absolute;
-    margin-left: 2rem;
-    font-size: 2rem;
-}
-
-.hints {
-    position: absolute;
-    margin: 4rem 2rem;
-    font-size: 2rem;
-    background-color: aquamarine;
-    border-radius: 20px;
-    padding: 1rem;
-    border: 2px solid black;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.hints:hover {
-    transform: scale(1.2);
-}
-
-.safe-click {
-    position: absolute;
-    margin: 12rem 2rem;
-    font-size: 1.5rem;
-    background-color: rgb(88, 88, 219);
-    padding: 1.2rem 1rem;
-    color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 800;
-    transition: 0.5s;
-}
-
-.safe-click:hover {
-    transform: scale(1.2);
-}
-.undo {
-    position: absolute;
-    margin: 20rem 2rem;
-    font-size: 1.5rem;
-    background-color: rgb(221, 182, 39);
-    padding: 1.2rem 3.4rem;
-    color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 800;
-    transition: 0.5s;
-}
-
-.undo:hover {
-    transform: scale(1.2);
-}
-.mega-hint {
-    position: absolute;
-    margin: 28rem 2rem;
-    font-size: 1.5rem;
-    background-color: rgb(233, 240, 17);
-    padding: 1.2rem 1.3rem;
-    color: rgb(109, 121, 7);
-    border: 2px solid black;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 800;
-    transition: 0.5s;
-}
-
-.mega-hint:hover {
-    transform: scale(1.2);
-}
-
-.terminator {
-    position: absolute;
-    right: 5rem;
-    top: 10rem;
-    border-radius: 50%;
-}
-
-.terminator img {
-    margin-top: 2rem;
-    box-sizing: border-box;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.terminator img:hover {
-    transform: scale(1.2);
-}
-
-.terminator div {
-    font-size: 2rem;
-}
-
-.timer {
-    font-size: 1.5rem;
-    border-radius: 20px;
-    background: rgb(242, 187, 22);
-    border: 2px solid black;
-}
-
-.count {
-    font-size: 1.5rem;
-    border-radius: 20px;
-    border: 2px solid black;
-
-    background: rgb(242, 187, 22);
-}
-
-.player-btn {
-    transform: translateY(-5rem);
-    margin: 10px auto;
-    width: 4rem;
-    height: 4rem;
-    background-color: lightpink;
-    align-content: center;
-    border: 3px solid grey;
+    background: rgb(150, 25, 113);
 }
 
 .player-btn button {
-    font-size: 2rem;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
+    margin-top: 0.2rem;
+    font-size: 2.5rem;
     background-color: lightgray;
     border-top: 6px solid white;
     border-left: 6px solid white;
     border-bottom: 6px solid rgb(169, 167, 167);
     border-right: 6px solid rgb(169, 167, 167);
+    transition: 0.5s;
+}
+
+.player-btn button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .board-container {
-    transform: translateY(-5rem);
-    height: 600px;
-    width: 600px;
-    margin: auto;
+    height: 30rem;
+    width: 30rem;
+    margin: 0.5rem auto;
+    padding-bottom: 0.5rem;
 }
 
 table {
@@ -208,11 +106,11 @@ table {
 }
 
 .cell {
-    height: 50px;
-    width: 50px;
+    height: 2.1rem;
+    width: 2.1rem;
     background: rgb(197, 190, 190);
-    font-size: 1.3rem;
-    font-weight: 900;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -226,6 +124,116 @@ table {
 
 .cover span {
     opacity: 0;
+}
+
+.bottom-panel {
+    margin-top: 3rem;
+    position: absolute;
+    bottom: 0;
+    background: rgb(177, 212, 248);
+    width: 100%;
+    height: 15rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.8rem;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-top: 8px solid rgb(125, 187, 249);
+    border-bottom: 8px solid rgb(182, 182, 248);
+}
+
+.flags {
+    background: lavenderblush;
+    height: 53%;
+    width: 23%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.lives {
+    font-size: 1.5rem;
+    width: 50%;
+    margin: auto;
+}
+
+.hints {
+    transition: 0.5s;
+    border-radius: 50%;
+    padding: 0.1rem;
+    font-size: 1.5rem;
+    width: 50%;
+    margin: auto;
+}
+
+.hints:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.safe-click {
+    background-color: rgb(88, 88, 219);
+    padding: 0.3rem;
+    width: 45%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.safe-click:hover {
+    cursor: pointer;
+    background-color: rgb(127, 127, 220);
+    transform: scale(1.2);
+}
+
+.undo {
+    background-color: rgb(212, 132, 13);
+    padding-top: 0.7rem;
+    font-size: 1.5rem;
+    width: 45%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.undo:hover {
+    cursor: pointer;
+    background-color: rgb(220, 162, 74);
+    transform: scale(1.2);
+}
+
+.mega-hint {
+    background-color: rgb(21, 107, 54);
+    padding: 0.3rem;
+    width: 45%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.mega-hint:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgb(42, 147, 82);
+}
+
+.exterminator {
+    background-color: rgb(162, 46, 21);
+    padding-top: 0.5rem;
+    width: 45%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.exterminator:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background: rgb(219, 114, 91);
 }
 
 .marked {
