@@ -258,6 +258,10 @@ table {
     background: rgb(219, 114, 91);
 }
 
+.pop-boom {
+    opacity: 1;
+}
+
 .marked {
     display: inline;
 }

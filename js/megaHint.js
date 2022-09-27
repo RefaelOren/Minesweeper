@@ -7,7 +7,7 @@ var gSecondCell;
 var gIsMegaHintUsed = false;
 
 function onClickedMegaHint(elBtn) {
-    if (gIsGameOver) return;
+    if (gIsGameOver || gIsMegaHintUsed) return;
     elBtn.style.border = '6px solid white';
     alert(
         'Mega Hint!!!\npay attention! mega hint from top left to top right\nclick on 2 cells and get the mega hint!'
@@ -78,5 +78,5 @@ function showMegaHint(startCell, endCell) {
             elMegaBtn.style.border = 'none';
             elMegaBtn.style.background = 'lightgrey';
         }
-    }, 2000);
+    }, 10000);
 }

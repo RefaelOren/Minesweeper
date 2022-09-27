@@ -10,7 +10,7 @@ if (gIsSafeClickOn && gSafeClickCount > 0) {
 
 function onSafeClicked(elBtn) {
     if (!gGame.isOn) startTimer();
-    if (!gSafeClickCount) return;
+    if (!gSafeClickCount || gIsGameOver) return;
     gGame.isOn = true;
     gIsSafeClickOn = true;
     elBtn.style.border = '6px solid white';
@@ -23,6 +23,7 @@ function showSafeClick(board, elBtn) {
     while (gBoard[iIdx][jIdx].isMine || gBoard[iIdx][jIdx].isShown) {
         iIdx = getRandomInt(0, board.length);
         jIdx = getRandomInt(0, board.length);
+        if (checkShown(board) >= gLevel.size ** 2 - gLevel.mines) break;
     }
     var elSafeClick = document.querySelector(
         `[data-i="${iIdx}"][data-j="${jIdx}"]`

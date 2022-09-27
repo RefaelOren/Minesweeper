@@ -103,11 +103,11 @@ function onCellClicked(elCell, iIdx, jIdx) {
         return;
     }
 
-    // check if pop mines is on
-    if (gIsPopOn && !gIsPopUsed) {
-        popMines(gBoard);
-        gIsPopUsed = true;
-    }
+    // // check if pop mines is on
+    // if (gIsPopOn && !gIsPopUsed) {
+    //     popMines(gBoard);
+    //     gIsPopUsed = true;
+    // }
 
     if (!elCell.classList.contains('cover')) return; //return if shown
 
@@ -170,9 +170,13 @@ function checkVictory() {
     var shownCount = checkShown(gBoard);
     var diff = gIsPopUsed ? gPopNum : 0;
     shownCount -= diff;
+    console.log('flag', gGame.markedCount);
+    console.log('count', shownCount);
+    console.log('mines', gLevel.mines);
+    console.log('shown', gLevel.size ** 2 - gLevel.mines);
     if (
-        gGame.markedCount === gLevel.mines &&
-        shownCount === gLevel.size ** 2 - gLevel.mines
+        gGame.markedCount >= gLevel.mines &&
+        shownCount >= gLevel.size ** 2 - gLevel.mines
     ) {
         console.log('win!');
         winSound.play();
@@ -188,7 +192,6 @@ function checkShown(board) {
             if (board[i][j].isShown && !board[i][j].isMine) count++;
         }
     }
-    console.log('count', count);
     renderCounts(count);
     return count;
 }
@@ -223,6 +226,9 @@ function setupRestart() {
     gIsMegaHintUsed = false;
     gIsPopUsed = false;
     gSafeClickCount = 3;
+    if (gLevel.lives === 1) gLevel.mines = 2;
+    else if (gLevel.lives === 2) gLevel.mines = 14;
+    else if (gLevel.lives === 3) gLevel.mines = 32;
     // setup Dom
     renderLives(gLevel.lives);
     renderTime(gGame.secsPassed);
