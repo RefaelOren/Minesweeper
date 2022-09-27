@@ -78,5 +78,5 @@ function showMegaHint(startCell, endCell) {
             elMegaBtn.style.border = 'none';
             elMegaBtn.style.background = 'lightgrey';
         }
-    }, 10000);
+    }, 2000);
 }

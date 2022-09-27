@@ -46,6 +46,7 @@ function popRandomMine(board) {
     console.log(cellPoped);
     var iIdx = +cellPoped.dataset.i;
     var jIdx = +cellPoped.dataset.j;
+
     // Model
     gIsPopUsed = true;
     board[iIdx][jIdx].isMine = false;
