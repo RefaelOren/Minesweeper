@@ -1,15 +1,17 @@
 'use strict';
 
 var gIsHintOn = false;
-var gHintsCount = 3;
 
 function onClickedHints(elHints) {
+    if (gIsGameOver) return;
+    if (!gLevel.hints) return;
     gIsHintOn = true;
     elHints.style.border = '6px solid white';
 }
 
 function showHint(cellI, cellJ, board) {
     if (!gGame.isOn) startTimer();
+    gGame.isOn = true;
     for (var i = cellI - 1; i <= cellI + 1; i++) {
         if (i < 0 || i >= board.length) continue;
         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
@@ -28,10 +30,14 @@ function showHint(cellI, cellJ, board) {
 
     // Model
     gIsHintOn = false;
-    gHintsCount--;
+    gLevel.hints--;
     // Dom
+    renderHints(gLevel.hints);
+}
+
+function renderHints(hintsCount) {
     var strHintsHTML = '';
-    for (var h = 0; h < gHintsCount; h++) {
+    for (var h = 0; h < hintsCount; h++) {
         strHintsHTML += HINT;
     }
     var elHints = document.querySelector('.hints');
@@ -47,6 +53,7 @@ function hideHints(cellI, cellJ, board) {
             var elCellNegs = document.querySelector(
                 `[data-i="${i}"][data-j="${j}"]`
             );
+            if (gBoard[i][j].isShown) continue;
             elCellNegs.classList.add('cover');
         }
     }

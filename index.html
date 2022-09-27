@@ -61,12 +61,18 @@
                 Safe click<br /><span class="safe-click-count">3</span>
             </div>
             <div class="undo">Undo</div>
-            <div class="mega-hint">Mega<br />Hint</div>
-            <div class="exterminator">Pop<br />3<br />mines</div>
+            <div onclick="onClickedMegaHint(this)" class="mega-hint">
+                Mega<br />Hint
+            </div>
+            <div onclick="onClickedPopMines(this)" class="exterminator">
+                Pop<br /><span>1</span>
+            </div>
         </div>
         <script src="js/util.js"></script>
         <script src="js/app.js"></script>
         <script src="js/hints.js"></script>
         <script src="js/safeClick.js"></script>
+        <script src="js/megaHint.js"></script>
+        <script src="js/popMines.js"></script>
     </body>
 </html>
