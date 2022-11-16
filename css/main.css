@@ -95,13 +95,13 @@ h1 {
 
 .lives {
     margin-top: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
     text-shadow: 2px 4px 3px rgba(206, 89, 55, 0.86);
 }
 
 .hints {
     margin-top: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
 
     height: 70%;
     border-radius: 20px;
@@ -170,7 +170,7 @@ table {
     width: 100%;
     height: 10vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .safe-click {
